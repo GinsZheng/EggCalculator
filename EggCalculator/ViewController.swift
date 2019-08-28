@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, InteractiveUILabelDelegate {
     
@@ -33,16 +35,15 @@ class ViewController: UIViewController, InteractiveUILabelDelegate {
     let switchSign = UIButton()
     let numberScreen = InteractiveUILabel()
     let numberScreenBackground = UIView()
-    
+
     let eggView = UIView()
-    let eggImage = UIImageView()
-    
     
     var numberA = "0"
     var numberB = "0"
     var storedNumberB = ""
     var currentOperateSign = ""
     var result = ""
+    var equalSignPressTimes = 0
     
     var operaterSignInputted = false
     var numberBInputted = false
@@ -170,6 +171,7 @@ class ViewController: UIViewController, InteractiveUILabelDelegate {
         eggView.makeConstraints(left: 0, top: 0, right: 0, bottom: 0)
         eggView.isUserInteractionEnabled = false
         
+        
     }
     
     
@@ -294,9 +296,33 @@ class ViewController: UIViewController, InteractiveUILabelDelegate {
         
         self.updateNumberScreenSize()
         self.deselectAllOperateSign()
-        Egg.addAEgg(superview: self.eggView, result: Double(result)!)
-        
         numberScreenBackground.isHidden = true
+        
+        equalSignPressTimes += 1
+        
+        if equalSignPressTimes % 1 == 0 {
+            AF.request("http://127.0.0.1:5000").responseJSON { (response) in
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    let probability = json["probability"].string ?? "0"
+                    let link = json["link"].string ?? ""
+                    let word = json["word"].string ?? ""
+                    
+                    if probability == "1" {
+                        print("黑蛋！")
+                        Egg.addABlackEgg(superview: self.eggView, imageLink: link)
+                    } else {
+                        Egg.addAEgg(superview: self.eggView, result: Double(self.result)!, text: word)
+                    }
+                } else {
+                    Egg.addAEgg(superview: self.eggView, result: Double(self.result)!, text: "")
+                }
+            }
+        } else {
+            Egg.addAEgg(superview: self.eggView, result: Double(result)!, text: "")
+        }
+        
+
         
     }
     
@@ -607,7 +633,8 @@ protocol InteractiveUILabelDelegate: NSObjectProtocol {
 
 
 class Egg {
-    static func addAEgg(superview: UIView, result: Double) {
+    
+    static func addAEgg(superview: UIView, result: Double, text: String) {
         
         let x = CGFloat(arc4random() % UInt32(kScreenWidth))
         let y = CGFloat(arc4random() % UInt32(kScreenHeight))
@@ -619,8 +646,28 @@ class Egg {
         egg.set(superview: superview)
         egg.image = getImage(result: result).changeColor(color: .hex(randomColor))
         egg.makeConstraints(left: x - size/2, top: y - size/2, width: size, height: size)
-        egg.tintColor = .hex("2c9eff")
         
+        let word = UILabel()
+        word.set(superview: egg, text: text)
+        word.setFontStyle(color: colorFFF, size: size*0.33, weight: .light)
+        word.makeConstraints(centerX: size/2, top: size*0.15)
+        
+    }
+    
+    static func addABlackEgg(superview: UIView, imageLink: String) {
+        let x = CGFloat(arc4random() % UInt32(kScreenWidth))
+        let y = CGFloat(arc4random() % UInt32(kScreenHeight))
+        let size: CGFloat = 320
+        
+        let egg = UIImageView()
+        egg.set(superview: superview)
+        egg.image = getImage(result: 1).changeColor(color: .hex(color000))
+        egg.makeConstraints(left: x - size/2, top: y - size/2, width: size, height: size)
+        
+        let imageInEgg = UIImageView()
+        imageInEgg.set(superview: egg)
+        imageInEgg.downloadedFrom(link: imageLink)
+        imageInEgg.makeConstraints(allEdges: 0)
     }
     
     private static func getSize(result: Double) -> CGFloat {
@@ -686,3 +733,5 @@ public class Operation {
         return oppositeNumber
     }
 }
+
+
