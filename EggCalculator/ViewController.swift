@@ -300,7 +300,7 @@ class ViewController: UIViewController, InteractiveUILabelDelegate {
         
         equalSignPressTimes += 1
         
-        if equalSignPressTimes % 1 == 0 {
+        if equalSignPressTimes % 30 == 0 {
             AF.request("http://127.0.0.1:5000").responseJSON { (response) in
                 if let value = response.result.value {
                     let json = JSON(value)
