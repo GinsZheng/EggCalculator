@@ -302,8 +302,6 @@ class ViewController: UIViewController, InteractiveUILabelDelegate {
         equalSignPressTimes += 1
         
         
-        
-        
         if equalSignPressTimes % 10 == 0 {
             AF.request("http://49.235.144.204:5000/").responseJSON { (response) in
 //            AF.request("http://127.0.0.1:5000/").responseJSON { (response) in
