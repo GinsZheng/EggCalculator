@@ -50,6 +50,7 @@ class ViewController: UIViewController, InteractiveUILabelDelegate {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         self.hideNavBar()
@@ -300,8 +301,12 @@ class ViewController: UIViewController, InteractiveUILabelDelegate {
         
         equalSignPressTimes += 1
         
-        if equalSignPressTimes % 30 == 0 {
-            AF.request("http://127.0.0.1:5000").responseJSON { (response) in
+        
+        
+        
+        if equalSignPressTimes % 10 == 0 {
+            AF.request("http://49.235.144.204:5000/").responseJSON { (response) in
+//            AF.request("http://127.0.0.1:5000/").responseJSON { (response) in
                 if let value = response.result.value {
                     let json = JSON(value)
                     let probability = json["probability"].string ?? "0"
@@ -312,14 +317,14 @@ class ViewController: UIViewController, InteractiveUILabelDelegate {
                         print("黑蛋！")
                         Egg.addABlackEgg(superview: self.eggView, imageLink: link)
                     } else {
-                        Egg.addAEgg(superview: self.eggView, result: Double(self.result)!, text: word)
+                        Egg.addAEgg(superview: self.eggView, result: Double(self.result) ?? 1, text: word)
                     }
                 } else {
-                    Egg.addAEgg(superview: self.eggView, result: Double(self.result)!, text: "")
+                    Egg.addAEgg(superview: self.eggView, result: Double(self.result) ?? 1, text: "")
                 }
             }
         } else {
-            Egg.addAEgg(superview: self.eggView, result: Double(result)!, text: "")
+            Egg.addAEgg(superview: self.eggView, result: Double(self.result) ?? 1, text: "")
         }
         
 
@@ -733,5 +738,4 @@ public class Operation {
         return oppositeNumber
     }
 }
-
 
