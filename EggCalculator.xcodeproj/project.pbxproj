@@ -11,6 +11,14 @@
 		7A14FCDF2359A2D60095C1EB /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A14FCD12359A2CA0095C1EB /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A14FCE22359A2D60095C1EB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A14FCB82359A2C50095C1EB /* Alamofire.framework */; };
 		7A14FCE32359A2D60095C1EB /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A14FCB82359A2C50095C1EB /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A2161D223898F1200D5A93A /* GlobalClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2161CA23898F1200D5A93A /* GlobalClass.swift */; };
+		7A2161D323898F1200D5A93A /* SetFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2161CB23898F1200D5A93A /* SetFrame.swift */; };
+		7A2161D423898F1200D5A93A /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2161CC23898F1200D5A93A /* GlobalVariables.swift */; };
+		7A2161D523898F1200D5A93A /* SetColorInHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2161CD23898F1200D5A93A /* SetColorInHex.swift */; };
+		7A2161D623898F1200D5A93A /* GlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2161CE23898F1200D5A93A /* GlobalFunction.swift */; };
+		7A2161D723898F1200D5A93A /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2161CF23898F1200D5A93A /* SQLiteManager.swift */; };
+		7A2161D823898F1200D5A93A /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2161D023898F1200D5A93A /* UIKitExtension.swift */; };
+		7A2161D923898F1200D5A93A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2161D123898F1200D5A93A /* Colors.swift */; };
 		7A5B2912231439FA002158A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B2911231439FA002158A2 /* AppDelegate.swift */; };
 		7A5B2914231439FA002158A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B2913231439FA002158A2 /* ViewController.swift */; };
 		7A5B2917231439FA002158A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A5B2915231439FA002158A2 /* Main.storyboard */; };
@@ -18,13 +26,8 @@
 		7A5B291C231439FB002158A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A5B291A231439FB002158A2 /* LaunchScreen.storyboard */; };
 		7A5B2927231439FB002158A2 /* EggCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B2926231439FB002158A2 /* EggCalculatorTests.swift */; };
 		7A5B2932231439FB002158A2 /* EggCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B2931231439FB002158A2 /* EggCalculatorUITests.swift */; };
-		7AF493462359AFE4009B6559 /* GlobalClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4933F2359AFE4009B6559 /* GlobalClass.swift */; };
-		7AF493472359AFE4009B6559 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF493402359AFE4009B6559 /* Colors.swift */; };
-		7AF493482359AFE4009B6559 /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF493412359AFE4009B6559 /* UIKitExtension.swift */; };
-		7AF493492359AFE4009B6559 /* SetColorInHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF493422359AFE4009B6559 /* SetColorInHex.swift */; };
-		7AF4934A2359AFE4009B6559 /* MakeConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF493432359AFE4009B6559 /* MakeConstraints.swift */; };
-		7AF4934B2359AFE4009B6559 /* GlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF493442359AFE4009B6559 /* GlobalFunction.swift */; };
-		7AF4934C2359AFE4009B6559 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF493452359AFE4009B6559 /* GlobalVariables.swift */; };
+		7A7B5D1D23BF93020079A931 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7B5D0F23BF92F30079A931 /* SQLite.framework */; };
+		7A7B5D1E23BF93020079A931 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7B5D0F23BF92F30079A931 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +157,55 @@
 			remoteGlobalIDString = 7A5B290D231439FA002158A2;
 			remoteInfo = EggCalculator;
 		};
+		7A7B5D0E23BF92F30079A931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A7B5D0423BF92F30079A931 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		7A7B5D1023BF92F30079A931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A7B5D0423BF92F30079A931 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		7A7B5D1223BF92F30079A931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A7B5D0423BF92F30079A931 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		7A7B5D1423BF92F30079A931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A7B5D0423BF92F30079A931 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		7A7B5D1623BF92F30079A931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A7B5D0423BF92F30079A931 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		7A7B5D1823BF92F30079A931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A7B5D0423BF92F30079A931 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		7A7B5D1A23BF92F30079A931 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A7B5D0423BF92F30079A931 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -165,6 +217,7 @@
 			files = (
 				7A14FCDF2359A2D60095C1EB /* SwiftyJSON.framework in Embed Frameworks */,
 				7A14FCE32359A2D60095C1EB /* Alamofire.framework in Embed Frameworks */,
+				7A7B5D1E23BF93020079A931 /* SQLite.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +227,14 @@
 /* Begin PBXFileReference section */
 		7A14FCAC2359A2C50095C1EB /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-alamofire5/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		7A14FCC52359A2CA0095C1EB /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
+		7A2161CA23898F1200D5A93A /* GlobalClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalClass.swift; sourceTree = "<group>"; };
+		7A2161CB23898F1200D5A93A /* SetFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetFrame.swift; sourceTree = "<group>"; };
+		7A2161CC23898F1200D5A93A /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		7A2161CD23898F1200D5A93A /* SetColorInHex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetColorInHex.swift; sourceTree = "<group>"; };
+		7A2161CE23898F1200D5A93A /* GlobalFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunction.swift; sourceTree = "<group>"; };
+		7A2161CF23898F1200D5A93A /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
+		7A2161D023898F1200D5A93A /* UIKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtension.swift; sourceTree = "<group>"; };
+		7A2161D123898F1200D5A93A /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7A5B290E231439FA002158A2 /* EggCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A5B2911231439FA002158A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A5B2913231439FA002158A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -187,13 +248,7 @@
 		7A5B292D231439FB002158A2 /* EggCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EggCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A5B2931231439FB002158A2 /* EggCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCalculatorUITests.swift; sourceTree = "<group>"; };
 		7A5B2933231439FB002158A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7AF4933F2359AFE4009B6559 /* GlobalClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalClass.swift; path = ../../SwiftKit/GeneralSwift/GlobalClass.swift; sourceTree = "<group>"; };
-		7AF493402359AFE4009B6559 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = ../../SwiftKit/GeneralSwift/Colors.swift; sourceTree = "<group>"; };
-		7AF493412359AFE4009B6559 /* UIKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIKitExtension.swift; path = ../../SwiftKit/GeneralSwift/UIKitExtension.swift; sourceTree = "<group>"; };
-		7AF493422359AFE4009B6559 /* SetColorInHex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SetColorInHex.swift; path = ../../SwiftKit/GeneralSwift/SetColorInHex.swift; sourceTree = "<group>"; };
-		7AF493432359AFE4009B6559 /* MakeConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MakeConstraints.swift; path = ../../SwiftKit/GeneralSwift/MakeConstraints.swift; sourceTree = "<group>"; };
-		7AF493442359AFE4009B6559 /* GlobalFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalFunction.swift; path = ../../SwiftKit/GeneralSwift/GlobalFunction.swift; sourceTree = "<group>"; };
-		7AF493452359AFE4009B6559 /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalVariables.swift; path = ../../SwiftKit/GeneralSwift/GlobalVariables.swift; sourceTree = "<group>"; };
+		7A7B5D0423BF92F30079A931 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +258,7 @@
 			files = (
 				7A14FCDE2359A2D60095C1EB /* SwiftyJSON.framework in Frameworks */,
 				7A14FCE22359A2D60095C1EB /* Alamofire.framework in Frameworks */,
+				7A7B5D1D23BF93020079A931 /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +316,7 @@
 				7A5B2925231439FB002158A2 /* EggCalculatorTests */,
 				7A5B2930231439FB002158A2 /* EggCalculatorUITests */,
 				7A5B290F231439FA002158A2 /* Products */,
+				7A7B5D1C23BF93020079A931 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -304,9 +361,31 @@
 			path = EggCalculatorUITests;
 			sourceTree = "<group>";
 		};
+		7A7B5D0523BF92F30079A931 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A7B5D0F23BF92F30079A931 /* SQLite.framework */,
+				7A7B5D1123BF92F30079A931 /* SQLiteTests iOS.xctest */,
+				7A7B5D1323BF92F30079A931 /* SQLite.framework */,
+				7A7B5D1523BF92F30079A931 /* SQLiteTests Mac.xctest */,
+				7A7B5D1723BF92F30079A931 /* SQLite.framework */,
+				7A7B5D1923BF92F30079A931 /* SQLiteTests tvOS.xctest */,
+				7A7B5D1B23BF92F30079A931 /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A7B5D1C23BF93020079A931 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7AC4462923143B1A00B3F6A7 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				7A7B5D0423BF92F30079A931 /* SQLite.xcodeproj */,
 				7A14FCC52359A2CA0095C1EB /* SwiftyJSON.xcodeproj */,
 				7A14FCAC2359A2C50095C1EB /* Alamofire.xcodeproj */,
 			);
@@ -316,13 +395,14 @@
 		7AC4465C23143BE600B3F6A7 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				7AF493402359AFE4009B6559 /* Colors.swift */,
-				7AF4933F2359AFE4009B6559 /* GlobalClass.swift */,
-				7AF493442359AFE4009B6559 /* GlobalFunction.swift */,
-				7AF493452359AFE4009B6559 /* GlobalVariables.swift */,
-				7AF493432359AFE4009B6559 /* MakeConstraints.swift */,
-				7AF493422359AFE4009B6559 /* SetColorInHex.swift */,
-				7AF493412359AFE4009B6559 /* UIKitExtension.swift */,
+				7A2161D123898F1200D5A93A /* Colors.swift */,
+				7A2161CA23898F1200D5A93A /* GlobalClass.swift */,
+				7A2161CE23898F1200D5A93A /* GlobalFunction.swift */,
+				7A2161CC23898F1200D5A93A /* GlobalVariables.swift */,
+				7A2161CB23898F1200D5A93A /* SetFrame.swift */,
+				7A2161CD23898F1200D5A93A /* SetColorInHex.swift */,
+				7A2161CF23898F1200D5A93A /* SQLiteManager.swift */,
+				7A2161D023898F1200D5A93A /* UIKitExtension.swift */,
 			);
 			name = General;
 			path = ../SwiftNotes/General;
@@ -425,6 +505,10 @@
 				{
 					ProductGroup = 7A14FCAD2359A2C50095C1EB /* Products */;
 					ProjectRef = 7A14FCAC2359A2C50095C1EB /* Alamofire.xcodeproj */;
+				},
+				{
+					ProductGroup = 7A7B5D0523BF92F30079A931 /* Products */;
+					ProjectRef = 7A7B5D0423BF92F30079A931 /* SQLite.xcodeproj */;
 				},
 				{
 					ProductGroup = 7A14FCC62359A2CA0095C1EB /* Products */;
@@ -539,6 +623,55 @@
 			remoteRef = 7A14FCDC2359A2CA0095C1EB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		7A7B5D0F23BF92F30079A931 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 7A7B5D0E23BF92F30079A931 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A7B5D1123BF92F30079A931 /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = 7A7B5D1023BF92F30079A931 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A7B5D1323BF92F30079A931 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 7A7B5D1223BF92F30079A931 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A7B5D1523BF92F30079A931 /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = 7A7B5D1423BF92F30079A931 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A7B5D1723BF92F30079A931 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 7A7B5D1623BF92F30079A931 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A7B5D1923BF92F30079A931 /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = 7A7B5D1823BF92F30079A931 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7A7B5D1B23BF92F30079A931 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = 7A7B5D1A23BF92F30079A931 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -573,15 +706,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2161D823898F1200D5A93A /* UIKitExtension.swift in Sources */,
+				7A2161D923898F1200D5A93A /* Colors.swift in Sources */,
 				7A5B2914231439FA002158A2 /* ViewController.swift in Sources */,
-				7AF493472359AFE4009B6559 /* Colors.swift in Sources */,
+				7A2161D723898F1200D5A93A /* SQLiteManager.swift in Sources */,
 				7A5B2912231439FA002158A2 /* AppDelegate.swift in Sources */,
-				7AF4934C2359AFE4009B6559 /* GlobalVariables.swift in Sources */,
-				7AF4934A2359AFE4009B6559 /* MakeConstraints.swift in Sources */,
-				7AF493492359AFE4009B6559 /* SetColorInHex.swift in Sources */,
-				7AF493482359AFE4009B6559 /* UIKitExtension.swift in Sources */,
-				7AF4934B2359AFE4009B6559 /* GlobalFunction.swift in Sources */,
-				7AF493462359AFE4009B6559 /* GlobalClass.swift in Sources */,
+				7A2161D623898F1200D5A93A /* GlobalFunction.swift in Sources */,
+				7A2161D323898F1200D5A93A /* SetFrame.swift in Sources */,
+				7A2161D523898F1200D5A93A /* SetColorInHex.swift in Sources */,
+				7A2161D223898F1200D5A93A /* GlobalClass.swift in Sources */,
+				7A2161D423898F1200D5A93A /* GlobalVariables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

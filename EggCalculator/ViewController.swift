@@ -60,7 +60,7 @@ class ViewController: UIViewController, InteractiveUILabelDelegate {
         numberScreen.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cancelLongPress)))
         
         
-        numberScreen.setFontStyle(color: color222, size: s(90), weight: .thin)
+        numberScreen.setFontStyle(size: s(90), color: c222, weight: .thin)
         numberScreen.textAlignment = .right
         numberScreen.set(superview: view, text: "0")
         numberScreen.scalingConstraints(right: 25, bottom: 467 + u(kSafeAreaInsets.bottom), width: numberScreen.getLabelWidth(withMaxWidth: kScreenWidth - 50), height: 90)
@@ -70,7 +70,7 @@ class ViewController: UIViewController, InteractiveUILabelDelegate {
         
         
         numberScreenBackground.set(superview: view)
-        numberScreenBackground.setBackgroundColor(color: colorF5F6F8)
+        numberScreenBackground.setBackgroundColor(color: cF5F6F8)
         numberScreenBackground.setCornerRadius(radius: s(14))
         numberScreenBackground.isHidden = true
         numberScreenBackground.scalingConstraints(right: 16, bottom: 459 + u(kSafeAreaInsets.bottom), width: numberScreen.getLabelWidth(withMaxWidth: kScreenWidth - 50) + 16, height: 106)
@@ -145,13 +145,13 @@ class ViewController: UIViewController, InteractiveUILabelDelegate {
         divisionSign.set(superview: view)
         divisionSign.scalingConstraints(right: 16, bottom: 372 + u(kSafeAreaInsets.bottom), width: 75, height: 75)
         
-        powerSign.setBackgroundImage(getImageWithColor(color: color212C9EFF), for: .normal)
-        powerSign.setBackgroundImage(getImageWithColor(color: color3B2C9EFF), for: .highlighted)
-        powerSign.setBackgroundImage(getImageWithColor(color: color333), for: .selected)
+        powerSign.setBackgroundImage(getImageWithColor(color: cBlue_2C9EFF_13), for: .normal)
+        powerSign.setBackgroundImage(getImageWithColor(color: cBlue_2C9EFF_23), for: .highlighted)
+        powerSign.setBackgroundImage(getImageWithColor(color: c333), for: .selected)
         powerSign.setCornerRadius(radius: s(75/2))
         powerSign.setTitle("^", for: .normal)
-        powerSign.setTitleColor(UIColor.hex(color222), for: .normal)
-        powerSign.setTitleColor(UIColor.hex(colorFFF), for: .selected)
+        powerSign.setTitleColor(UIColor.hex(c222), for: .normal)
+        powerSign.setTitleColor(UIColor.hex(cFFF), for: .selected)
         powerSign.titleLabel?.font = UIFont.systemFont(ofSize: s(35))
         powerSign.addTarget(target, action: #selector(inputOperateSign(_:)), for: .touchUpInside)
         powerSign.titleEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 16, right: 10)
@@ -169,7 +169,7 @@ class ViewController: UIViewController, InteractiveUILabelDelegate {
         
         
         eggView.set(superview: view)
-        eggView.makeConstraints(left: 0, top: 0, right: 0, bottom: 0)
+        eggView.setFrame(left: 0, top: 0, right: 0, bottom: 0)
         eggView.isUserInteractionEnabled = false
         
         
@@ -483,31 +483,31 @@ class ViewController: UIViewController, InteractiveUILabelDelegate {
 
 extension UIButton {
     func setNumberStyle(text: String, _ target: Any?, selector: Selector) {
-        self.setBackgroundImage(getImageWithColor(color: colorF5F6F8), for: .normal)
-        self.setBackgroundImage(getImageWithColor(color: colorDCDCDE), for: .highlighted)
+        self.setBackgroundImage(getImageWithColor(color: cF5F6F8), for: .normal)
+        self.setBackgroundImage(getImageWithColor(color: cDCDCDE), for: .highlighted)
         self.setCornerRadius(radius: s(75/2))
         self.setTitle(text, for: .normal)
-        self.setTitleColor(UIColor.hex(color222), for: .normal)
+        self.setTitleColor(UIColor.hex(c222), for: .normal)
         self.titleLabel?.font = UIFont.systemFont(ofSize: s(35))
         self.addTarget(target, action: selector, for: .touchUpInside)
     }
     
     func setOperateSignStyle(text: String, _ target: Any?, selector: Selector) {
-        self.setBackgroundImage(getImageWithColor(color: color2C9EFF), for: .normal)
-        self.setBackgroundImage(getImageWithColor(color: color278DE5), for: .highlighted)
-        self.setBackgroundImage(getImageWithColor(color: color333), for: .selected)
+        self.setBackgroundImage(getImageWithColor(color: cBlue_2C9EFF), for: .normal)
+        self.setBackgroundImage(getImageWithColor(color: c278DE5), for: .highlighted)
+        self.setBackgroundImage(getImageWithColor(color: c333), for: .selected)
         self.setCornerRadius(radius: s(75/2))
         self.setTitle(text, for: .normal)
-        self.setTitleColor(UIColor.hex(colorFFF), for: .normal)
-        self.setTitleColor(UIColor.hex(colorEEE), for: .highlighted)
+        self.setTitleColor(UIColor.hex(cFFF), for: .normal)
+        self.setTitleColor(UIColor.hex(cEEE), for: .highlighted)
         self.titleLabel?.font = UIFont.systemFont(ofSize: s(38))
         self.addTarget(target, action: selector, for: .touchUpInside)
         self.titleEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 16, right: 10)
     }
     
     func setFunctionButtonStyle(imageNamed: String, _ target: Any?, selector: Selector) {
-        self.setBackgroundImage(getImageWithColor(color: color212C9EFF), for: .normal)
-        self.setBackgroundImage(getImageWithColor(color: color3B2C9EFF), for: .highlighted)
+        self.setBackgroundImage(getImageWithColor(color: cBlue_2C9EFF_13), for: .normal)
+        self.setBackgroundImage(getImageWithColor(color: cBlue_2C9EFF_23), for: .highlighted)
         self.setCornerRadius(radius: s(75/2))
         self.setImage(UIImage(named: imageNamed), for: .normal)
         self.titleLabel?.font = UIFont.systemFont(ofSize: s(35))
@@ -648,12 +648,12 @@ class Egg {
         let egg = UIImageView()
         egg.set(superview: superview)
         egg.image = getImage(result: result).changeColor(color: .hex(randomColor))
-        egg.makeConstraints(left: x - size/2, top: y - size/2, width: size, height: size)
+        egg.setFrame(left: x - size/2, top: y - size/2, width: size, height: size)
         
         let word = UILabel()
         word.set(superview: egg, text: text)
-        word.setFontStyle(color: colorFFF, size: size*0.33, weight: .light)
-        word.makeConstraints(centerX: size/2, top: size*0.15)
+        word.setFontStyle(size: size*0.33, color: cFFF, weight: .light)
+        word.setFrame(centerX: size/2, top: size*0.15)
         
     }
     
@@ -664,13 +664,13 @@ class Egg {
         
         let egg = UIImageView()
         egg.set(superview: superview)
-        egg.image = getImage(result: 1).changeColor(color: .hex(color000))
-        egg.makeConstraints(left: x - size/2, top: y - size/2, width: size, height: size)
+        egg.image = getImage(result: 1).changeColor(color: .hex(c000))
+        egg.setFrame(left: x - size/2, top: y - size/2, width: size, height: size)
         
         let imageInEgg = UIImageView()
         imageInEgg.set(superview: egg)
         imageInEgg.downloadedFrom(link: imageLink)
-        imageInEgg.makeConstraints(allEdges: 0)
+        imageInEgg.setFrame(allEdges: 0)
     }
     
     private static func getSize(result: Double) -> CGFloat {
